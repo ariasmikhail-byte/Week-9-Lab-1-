@@ -6,53 +6,18 @@
 # November 4, 2026
 
 # Function to calculate kinetic energy
+def Kinetic_Energy(m, v):
+    ke = 0.5 * m * v * v
+    return ke
 
-def kineticEnergy(mass, velocity):
-
-    energy = 0.5 * mass * velocity ** 2
-
-    return energy
-
-# Main function
+def Display(ke):
+    print("The value of kinetic energy is", ke)
 
 def main():
+    m = float(input("Enter the mass: "))
+    v = float(input("Enter the velocity: "))
 
-    print("Kinetic Energy Calculator")
-
-    # Get user input
-
-    try:
-
-        mass = float(input("Enter mass in kilograms: "))
-
-        velocity = float(input("Enter velocity in meters per second: "))
-
-    except ValueError:
-
-        print("Please enter valid numbers.")
-
-        return
-
-    # Check for negative numbers
-
-    if mass < 0 or velocity < 0:
-
-        print("Mass and velocity cannot be negative.")
-
-    else:
-
-        # Call the function
-
-        energy = kineticEnergy(mass, velocity)
-
-        # Display results
-
-        print("\nMass:", mass, "kg")
-
-        print("Velocity:", velocity, "m/s")
-
-        print("Kinetic Energy:", format(energy, ".2f"), "joules")
-
-# Call main
+    ke = Kinetic_Energy(m, v)
+    Display(ke)
 
 main()
